@@ -1,0 +1,60 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "maps/TestStage_1.tmx",
+    "expandedProjectPaths": [
+        "maps"
+    ],
+    "file.lastUsedOpenFilter": "全部文件 (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "C:/Users/helca/Desktop/22.tmx": {
+            "scale": 1.487673611111111,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 276.60637180534485,
+                "y": 287.6975142957171
+            }
+        },
+        "C:/Users/helca/Desktop/未命名.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1533,
+                "y": 832
+            }
+        },
+        "maps/TestStage_1.tmx": {
+            "scale": 1.487673611111111,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 276.60637180534485,
+                "y": 288.3697047496791
+            }
+        }
+    },
+    "map.height": 24,
+    "map.lastUsedFormat": "tmx",
+    "map.orientation": null,
+    "map.tileHeight": 24,
+    "map.tileWidth": 24,
+    "map.width": 24,
+    "openFiles": [
+        "maps/TestStage_1.tmx"
+    ],
+    "project": "fd2r.tiled-project",
+    "recentFiles": [
+        "maps/TestStage_1.tmx",
+        "C:/Users/helca/Desktop/22.tmx",
+        "C:/Users/helca/Desktop/未命名.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 24,
+        "width": 24
+    }
+}

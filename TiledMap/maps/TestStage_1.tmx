@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.1" orientation="orthogonal" renderorder="right-down" width="24" height="24" tilewidth="24" tileheight="24" infinite="0" nextlayerid="4" nextobjectid="2">
+ <imagelayer id="2" name="图像图层 1">
+  <image source="Backgrounds/Chapter-01.png" width="576" height="576"/>
+ </imagelayer>
+ <layer id="1" name="图块层 1" width="24" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <objectgroup id="3" name="对象层 1">
+  <object id="1" name="enemy_path_1" x="48" y="552">
+   <polyline points="0,0 0,-72 48,-72 48,-96"/>
+  </object>
+ </objectgroup>
+</map>
