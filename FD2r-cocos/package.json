@@ -1,0 +1,15 @@
+{
+  "name": "fd2r-cocos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-typescript": "^8.0.2",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "dependencies": {
+    "typescript": "^3.9.6"
+  }
+}
