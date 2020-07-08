@@ -1,4 +1,3 @@
-import StageController from './StageController';
 import { TILE_SIZE } from './StageConsts';
 
 const { ccclass, property } = cc._decorator;
@@ -17,6 +16,8 @@ export default class CursorController extends cc.Component {
   })
   public cursor: cc.Node = null;
 
+  public cursorPosition: cc.Vec2 = cc.v2(0, 0);
+
   // public onLoad() {
   // }
 
@@ -25,9 +26,16 @@ export default class CursorController extends cc.Component {
 
   public update(dt: number) {
     // position
-    const stage = this.node.getComponent(StageController);
-    const x = stage.cursorPosition[0] * TILE_SIZE;
-    const y = stage.cursorPosition[1] * TILE_SIZE;
-    this.cursor.setPosition(x, y);
+    const pos = this.cursorPosition.mul(TILE_SIZE);
+    this.cursor.setPosition(pos);
+  }
+
+  /**
+   * cursor move
+   * @param x
+   * @param y
+   */
+  public setCursorPosition(pos: cc.Vec2) {
+    this.cursorPosition = pos;
   }
 }

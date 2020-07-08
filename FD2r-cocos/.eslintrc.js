@@ -6,6 +6,7 @@ module.exports = {
   rules: {
     "no-underscore-dangle": "off",
     "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
-    "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }]
+    "@typescript-eslint/no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
+    "no-mixed-operators": "off"
   }
 };

@@ -24,19 +24,18 @@ export default class StageInputController extends cc.Component {
 
   private onMouseMove(e: cc.Event.EventMouse) {
     const stage = this.node.getComponent(StageController);
-    const localPos = this.node.convertToNodeSpaceAR(e.getLocation());
+    const map = this.node.getComponent(MapController);
+    const globalPos = e.getLocation();
+    const localPos = this.node.convertToNodeSpaceAR(globalPos);
 
     // set cursor position
-    const x = Math.max(0, Math.min(stage.mapSize[0], Math.floor(localPos.x / TILE_SIZE)));
-    const y = Math.max(0, Math.min(stage.mapSize[1], Math.floor(localPos.y / TILE_SIZE)));
-    stage.setCursorPosition(x, y);
+    const x = Math.max(0, Math.min(map.mapSize.x, Math.floor(localPos.x / TILE_SIZE)));
+    const y = Math.max(0, Math.min(map.mapSize.y, Math.floor(localPos.y / TILE_SIZE)));
+    this.node.getComponent(CursorController).setCursorPosition(cc.v2(x, y));
 
     // map scroll
-    if (localPos.x < 100) {
-      // TODO
-    }
-    if (localPos.y < 100) {
-      // TODO
-    }
+    const scrollX = globalPos.x < TILE_SIZE ? 1 : globalPos.x > cc.winSize.width - TILE_SIZE ? -1 : 0;
+    const scrollY = globalPos.y < TILE_SIZE ? 1 : globalPos.y > cc.winSize.height - TILE_SIZE ? -1 : 0;
+    stage.scroll(scrollX, scrollY);
   }
 }
