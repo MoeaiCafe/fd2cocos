@@ -17,7 +17,7 @@ export default class MapController extends cc.Component {
   })
   public map: cc.Node = null;
 
-  public mapSize: cc.Vec2 = cc.v2(24, 24);
+  public mapSize: cc.Vec2 = cc.v2(50, 50);
 
   public offset: cc.Vec2 = cc.v2(0, 0);
 

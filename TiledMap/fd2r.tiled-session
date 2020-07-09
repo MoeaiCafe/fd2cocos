@@ -30,10 +30,10 @@
         },
         "maps/TestStage_1.tmx": {
             "scale": 1.487673611111111,
-            "selectedLayer": 0,
+            "selectedLayer": -1,
             "viewCenter": {
-                "x": 276.60637180534485,
-                "y": 288.3697047496791
+                "x": 482.9688411716653,
+                "y": 725.2934998249505
             }
         }
     },
@@ -52,6 +52,7 @@
         "C:/Users/helca/Desktop/22.tmx",
         "C:/Users/helca/Desktop/未命名.tmx"
     ],
+    "resizeMap.removeObjects": true,
     "tileset.embedInMap": true,
     "tileset.tileSize": {
         "height": 24,

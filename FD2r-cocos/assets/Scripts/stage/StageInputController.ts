@@ -1,9 +1,11 @@
-import StageController from './StageController';
 import CursorController from './CursorController';
 import MapController from './MapController';
 import { TILE_SIZE } from './StageConsts';
+import StageScrollController from './StageScrollController';
 
 const { ccclass } = cc._decorator;
+
+const SCROLL_BORDER_SIZE = TILE_SIZE * 1.5;
 
 /**
  * controller for stage input.
@@ -23,7 +25,7 @@ export default class StageInputController extends cc.Component {
   // }
 
   private onMouseMove(e: cc.Event.EventMouse) {
-    const stage = this.node.getComponent(StageController);
+    // const stage = this.node.getComponent(StageController);
     const map = this.node.getComponent(MapController);
     const globalPos = e.getLocation();
     const localPos = this.node.convertToNodeSpaceAR(globalPos);
@@ -34,8 +36,18 @@ export default class StageInputController extends cc.Component {
     this.node.getComponent(CursorController).setCursorPosition(cc.v2(x, y));
 
     // map scroll
-    const scrollX = globalPos.x < TILE_SIZE ? 1 : globalPos.x > cc.winSize.width - TILE_SIZE ? -1 : 0;
-    const scrollY = globalPos.y < TILE_SIZE ? 1 : globalPos.y > cc.winSize.height - TILE_SIZE ? -1 : 0;
-    stage.scroll(scrollX, scrollY);
+    let scrollX = 0;
+    let scrollY = 0;
+    if (globalPos.x > 0 && globalPos.x < SCROLL_BORDER_SIZE) {
+      scrollX = 1 - globalPos.x / SCROLL_BORDER_SIZE;
+    } else if (globalPos.x > cc.winSize.width - SCROLL_BORDER_SIZE && globalPos.x < cc.winSize.width) {
+      scrollX = -1 + (cc.winSize.width - globalPos.x) / SCROLL_BORDER_SIZE;
+    }
+    if (globalPos.y > 0 && globalPos.y < SCROLL_BORDER_SIZE) {
+      scrollY = 1 - globalPos.y / SCROLL_BORDER_SIZE;
+    } else if (globalPos.y > cc.winSize.height - SCROLL_BORDER_SIZE && globalPos.y < cc.winSize.height) {
+      scrollY = -1 + (cc.winSize.height - globalPos.y) / SCROLL_BORDER_SIZE;
+    }
+    this.node.getComponent(StageScrollController).setScrollDir(scrollX, scrollY);
   }
 }
